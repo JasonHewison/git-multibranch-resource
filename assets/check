@@ -207,7 +207,7 @@ if [ -d $destination ]; then
     if [ "$(git config --local --get remote.origin.fetch)" != "+refs/heads/\*:refs/remotes/origin/\*" ] ; then
        git config --local --replace-all remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" ".*refs\/remotes\/origin\/.*"
     fi
-    git fetch --all
+    git fetch --all --prune
   else
     if [ -z "$branch" ] ; then
       ref="$(git symbolic-ref HEAD)"
